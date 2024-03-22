@@ -16,6 +16,13 @@ namespace croudc.Controllers
         [HttpPost]
         public ViewResult Login(FormCollection values)
         {
+            if (values["user"] == "admin" && values["pass"] == "12345")
+                {
+                Session["uname"] = "admin";
+            }
+            else
+                ViewBag.msg = "Invalid";
+
             return View();
         }
     }
