@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Personal";
+}
+
+<h2>Personal Deatels</h2>
+<hr/>
+<div style="text-align:right">
+    <h4>Welcome @Session["uname"]</h4>
+
+</div>
+
+<form method="post" action="/student/personal">
+    <label>Enter Full Name</label><br />
+    <input type="text" name="sname" /><br />
+    <label>Enter Adress</label><br />
+    <textarea name="adress"></textarea><br />
+    <label>Enter Contact</label><br />
+    <input type="text" name="contact" /><br />
+    <input type="submit" value="save" />
+
+
+
+</form>
+<br />
+<span style="color:red">@ViewBag.msg</span>
+
+

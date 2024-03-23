@@ -14,11 +14,12 @@ namespace croudc.Controllers
             return View();
         }
         [HttpPost]
-        public ViewResult Login(FormCollection values)
+        public ActionResult Login(FormCollection values)
         {
             if (values["user"] == "admin" && values["pass"] == "12345")
                 {
                 Session["uname"] = "admin";
+                return RedirectToAction("Personal", "student");
             }
             else
                 ViewBag.msg = "Invalid";
